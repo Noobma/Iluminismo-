@@ -102,7 +102,27 @@
     </section>
 
   </main>
+<!-- Script de Acessibilidade -->
+  <script>
+    // Alternar alto contraste
+    function toggleContrast() {
+      document.body.classList.toggle('contrast');
+    }
 
+    // Aumentar ou diminuir fonte
+    function changeFontSize(amount) {
+      let currentSize = parseFloat(getComputedStyle(document.body).fontSize);
+      document.body.style.fontSize = (currentSize + amount) + "px";
+    }
+
+    // Estilo para contraste extra
+    const style = document.createElement("style");
+    style.innerHTML = `
+      .contrast {
+        filter: invert(1) hue-rotate(180deg);
+      }
+    `;
+  
   <!-- Script para as abas -->
   <script>
     function showTab(tabId) {
